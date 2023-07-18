@@ -14,8 +14,7 @@ SELECT *
 
 FROM table;
 
-# SQL query practice :
-# Lesson 1 : SELECT queries 101
+###
 1. Find the title of each film
 ```
 SELECT title FROM movies;
@@ -56,4 +55,50 @@ BETWEEN … AND …	          Number is within range of two values (inclusive)	 
 NOT BETWEEN … AND …	    Number is not within range of two values (inclusive)   	 col_name NOT BETWEEN 1 AND 10
 IN (…)	                Number exists in a list	                               col_name IN (2, 4, 6)
 NOT IN (…)	                Number does not exist in a list	                         col_name NOT IN (1, 3, 5)
+```
+###
+1. Find the movie with a row id of 6
+```
+SELECT * FROM movies WHERE id = 6;
+```
+2. Find the movies released in the years between 2000 and 2010
+```
+SELECT * FROM movies WHERE year BETWEEN 2000 AND 2010;
+```
+3. Find the movies not released in the years between 2000 and 2010
+```
+SELECT * FROM movies WHERE year NOT BETWEEN 2000 AND 2010;
+```
+4. Find the first 5 Pixar movies and their release year
+```
+SELECT title, year FROM movies WHERE year <= 2003;
+```
+##
+```
+Operator	                         Condition	                                                   Example
+=	            Case sensitive exact string comparison (notice the single equals)	            col_name = "abc"
+!= or <>	      Case sensitive exact string inequality comparison	                        col_name != "abcd"
+LIKE	            Case insensitive exact string comparison	                                    col_name LIKE "ABC"
+NOT LIKE	      Case insensitive exact string inequality comparison	                        col_name NOT LIKE "ABCD"
+%	            only with LIKE or NOT LIKE(0 or more)                                         col_name LIKE "%AT%"
+_	            only with LIKE or NOT LIKE(1)                                                 col_name LIKE "AN_"
+IN (…)	      String exists in a list	                                                      col_name IN ("A", "B", "C")
+NOT IN (…)	      String does not exist in a list	                                          col_name NOT IN ("D", "E", "F")
+```
+###
+1. Find all the Toy Story movies
+```
+SELECT title FROM movies WHERE title LIKE "Toy Story%";
+```
+2. Find all the movies directed by John Lasseter
+```
+SELECT title FROM movies WHERE director = "John Lasseter";
+```
+3. Find all the movies (and director) not directed by John Lasseter
+```
+SELECT title FROM movies WHERE director != "John Lasseter";
+```
+4. Find all the WALL-* movies
+```
+SELECT title FROM movies WHERE title LIKE "WALL-_"
 ```
