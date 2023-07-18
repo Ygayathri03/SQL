@@ -102,3 +102,5 @@ SELECT title FROM movies WHERE director != "John Lasseter";
 ```
 SELECT title FROM movies WHERE title LIKE "WALL-_"
 ```
+## FILTERING AND SORTING QUERY RESULTS
+--> DISTINCT => discaring rows that have a duplicate column values
